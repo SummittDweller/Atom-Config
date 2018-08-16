@@ -1,0 +1,67 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/d-118125-1185-1lzmasu.z4e9sy8pvi/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/d-118125-1185-1lzmasu.z4e9sy8pvi/package.tgz",
+        "spec": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/d-118125-1185-1lzmasu.z4e9sy8pvi/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/apm-install-dir-118125-1185-1w1x8eq.1rre019k9"
+    ]
+  ],
+  "_from": "../d-118125-1185-1lzmasu.z4e9sy8pvi/package.tgz",
+  "_id": "markdown-scroll-sync@2.1.2",
+  "_inCache": true,
+  "_location": "/markdown-scroll-sync",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/d-118125-1185-1lzmasu.z4e9sy8pvi/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/d-118125-1185-1lzmasu.z4e9sy8pvi/package.tgz",
+    "spec": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/d-118125-1185-1lzmasu.z4e9sy8pvi/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-118125-1185-1lzmasu.z4e9sy8pvi/package.tgz",
+  "_shasum": "6fbec1ae0719aee51667636a4042336057ce1433",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/d-118125-1185-1lzmasu.z4e9sy8pvi/package.tgz",
+  "_where": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/apm-install-dir-118125-1185-1w1x8eq.1rre019k9",
+  "bugs": {
+    "url": "https://github.com/mark-hahn/markdown-scroll-sync/issues"
+  },
+  "dependencies": {
+    "sub-atom": "*"
+  },
+  "description": "Auto-scroll markdown-preview tab to match markdown source",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">1.0.0"
+  },
+  "homepage": "https://github.com/mark-hahn/markdown-scroll-sync#readme",
+  "keywords": [
+    "markdown",
+    "preview",
+    "scroll",
+    "sync"
+  ],
+  "license": "MIT",
+  "main": "./lib/main",
+  "name": "markdown-scroll-sync",
+  "optionalDependencies": {},
+  "readme": "\n# markdown-scroll-sync Atom editor package\n\nAuto-scroll markdown-preview tab to match markdown source.\n\n---\n![mkdn-scrl-sync](https://cloud.githubusercontent.com/assets/811455/11317259/c5b9b0c2-8fdc-11e5-8f85-b7deefb525c5.gif)\n---\n\n### Note about version 2.x.x\n\nThis is a total rewrite of the package. This version is more accurate and smoother.  And last, but not least, fewer bugs (grin).\n\n### Installation\n\nRun `apm install markdown-scroll-sync` or use the settings page to find the package and install it.\n\n### Usage\n\nThere is no atom command or keybinding. There are no config settings.  Just open a markdown file, open the preview, and watch it work.\n \n### License\n\nCopyright Mark Hahn by MIT license.\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mark-hahn/markdown-scroll-sync.git"
+  },
+  "version": "2.1.2"
+}

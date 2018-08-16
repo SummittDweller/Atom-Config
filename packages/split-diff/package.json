@@ -1,0 +1,80 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/d-118015-5705-fc1pfv.o4z70c0udi/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/d-118015-5705-fc1pfv.o4z70c0udi/package.tgz",
+        "spec": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/d-118015-5705-fc1pfv.o4z70c0udi/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/apm-install-dir-118015-5705-1aoz37l.nl2sbjfw29"
+    ]
+  ],
+  "_from": "../d-118015-5705-fc1pfv.o4z70c0udi/package.tgz",
+  "_id": "split-diff@1.5.2",
+  "_inCache": true,
+  "_location": "/split-diff",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/d-118015-5705-fc1pfv.o4z70c0udi/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/d-118015-5705-fc1pfv.o4z70c0udi/package.tgz",
+    "spec": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/d-118015-5705-fc1pfv.o4z70c0udi/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-118015-5705-fc1pfv.o4z70c0udi/package.tgz",
+  "_shasum": "ad959b16012899148985046e33819bfc589fdc8e",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/d-118015-5705-fc1pfv.o4z70c0udi/package.tgz",
+  "_where": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/apm-install-dir-118015-5705-1aoz37l.nl2sbjfw29",
+  "bugs": {
+    "url": "https://github.com/mupchrch/split-diff/issues"
+  },
+  "dependencies": {
+    "diff": "latest"
+  },
+  "description": "A split pane diff tool.",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">= 1.19 < 2.0.0"
+  },
+  "homepage": "https://github.com/mupchrch/split-diff#readme",
+  "keywords": [
+    "diff",
+    "git",
+    "split",
+    "compare",
+    "panes",
+    "files",
+    "lines",
+    "code",
+    "difference",
+    "visual"
+  ],
+  "license": "MIT",
+  "main": "./lib/split-diff",
+  "name": "split-diff",
+  "optionalDependencies": {},
+  "providedServices": {
+    "split-diff": {
+      "versions": {
+        "1.0.0": "provideSplitDiff"
+      }
+    }
+  },
+  "readme": "# split-diff [![Installs!](https://img.shields.io/apm/dm/split-diff.svg?style=flat-square)](https://atom.io/packages/split-diff) [![Version!](https://img.shields.io/apm/v/split-diff.svg?style=flat-square)](https://atom.io/packages/split-diff) [![License](https://img.shields.io/apm/l/split-diff.svg?style=flat-square)](https://github.com/mupchrch/split-diff/blob/master/LICENSE.md)\n\nDiffs text between two split panes. New panes are created if less than two panes exist upon run of the package.\n\n\\*\\* **Supports diffing recent git changes!** \\*\\*\n\n![split-diff in action](https://github.com/mupchrch/split-diff/raw/master/demo.gif)\n\n## Usage\n\n### Commands\n\nYou can call any of these commands from your own custom keybinding, simply override the command in your keymap.cson!\n\n| Command | Effect | Default Keymaps |\n| ------- | ------ | --------------- |\n| Toggle `split-diff:toggle` | Toggles a diff of the text between two side-by-side panes. Creates panes as necessary. Displays git changes if there is a repository found. | `ctrl-alt-t`,<br>`ctrl-alt-d` (_linux_) |\n| Enable `split-diff:enable` | Enables a diff of the text between two side-by-side panes. Creates panes as necessary. Displays git changes if there is a repository found. | ... |\n| Disable `split-diff:disable` | Disables a diff. Removes any panes that were created by this package. | ... |\n| Ignore Whitespace `split-diff:ignore-whitespace` | Toggles the Ignore Whitespace setting. | ... |\n| Move to Next Diff `split-diff:next-diff` | Highlights the next difference. Moves the cursor so it can be easily copied. | `ctrl-alt-n` |\n| Move to Previous Diff `split-diff:prev-diff` | Highlights the previous difference. Moves the cursor so it can be easily copied. | `ctrl-alt-p` |\n| Copy to Right `split-diff:copy-to-right` | Copies all differences containing a cursor to the right pane. | `ctrl-alt-.` |\n| Copy to Left `split-diff:copy-to-left` | Copies all differences containing a cursor to the left pane. | `ctrl-alt-,` |\n\n### Settings\n\n* **Show Word Diff** - Diffs the words between each line when this box is checked.\n* **Ignore Whitespace** - Will not diff whitespace when this box is checked.\n* **Mute Notifications** - Mutes all warning notifications when this box is checked.\n* **Turn Off Soft Wrap** - Automatically turns off soft wrap during diff. Restores on disable.\n* **Hide Docks** - Automatically hides all docks during diff (Tree View, Github, etc). Re-shows on disable.\n* **Sync Scrolling** - Syncs the scrolling of the editors.\n#### Colors\n* **Added Color Side** - Which editor (left or right) to highlight as added. The opposite editor will be highlighted as removed.\n* **Override Highlight Colors** - Whether to override diff colors derived from the current syntax theme.\n* **Added Custom Color** - The color that will be used when overriding added highlight colors.\n* **Removed Custom Color** - The color that will be used when overriding removed highlight colors.\n\n### Service API\nPackages can consume the split-diff service to do things like enable a diff between two editors.\n\n```js\n/**\n * Getter for the marker layers of each editor being diffed.\n * @return {Promise} A promise that resolves to an object containing the marker layers.\n */\ngetMarkerLayers();\n\n/**\n * Enables split-diff between the two given editors.\n * @param {TextEditor} editor1 - The left editor.\n * @param {TextEditor} editor2 - The right editor.\n * @param {object} options - Options to override any package setting.\n */\ndiffEditors(editor1, editor2, options);\n\n/**\n * Disables split-diff.\n */\ndisable();\n```\n\n## Minimap Plugin\n\nGet the [split-diff minimap plugin](https://atom.io/packages/minimap-split-diff) to make it easier to spot differences!\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mupchrch/split-diff.git"
+  },
+  "version": "1.5.2"
+}

@@ -1,0 +1,1 @@
+{"hostList":[{"alias":"","hostname":"165.227.83.186","directory":"/var/sftp/","username":"sftp-admin","port":"22","localFiles":[],"useAgent":false,"usePrivateKey":false,"usePassword":true,"password":"4Score&Seven","deserializer":"SftpHost"}],"deserializer":"InterProcessData"}

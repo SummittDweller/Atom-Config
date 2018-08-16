@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns="http://www.loc.gov/mods/v3" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <titleInfo>The Liberal Arts College in a World of Change</titleInfo>
+  <titleInfo type="alternative">Academic Convocation</titleInfo>
+  <typeOfResource>text</typeOfResource>
+  <genre>program</genre>
+  <abstract>The program for the closing event of a three-day long convocation, "The Liberal Arts College in a World of Change."</abstract>
+  <name type="personal">
+    <role>creator</role>
+  </name>
+  <name type="corporate">
+    <role>creator</role>
+    <namePart>Grinnell College</namePart>
+  </name>
+  <language>
+    <languageTerm type="code">eng</languageTerm>
+    <languageTerm type="text">English</languageTerm>
+  </language>
+  <originInfo>
+    <dateCreated>1967</dateCreated>
+    <publisher>Grinnell College</publisher>
+  </originInfo>
+  <physicalDescription displayLabel="Physical">
+    <extent displayLabel="Physical Extent">16 pages</extent>
+  </physicalDescription>
+  <physicalDescription>
+    <extent displayLabel="Digital Extent">16</extent>
+    <digitalOrigin>reformated digital</digitalOrigin>
+    <internetMediaType>application/pdf</internetMediaType>
+  </physicalDescription>
+  <classification authority="local" type="mixed">11.3 P5</classification>
+  <subject authority="lcsh">Convocations</subject>
+  <subject authority="lcsh">20th century</subject>
+  <relatedItem type="isPartOf">
+    <titleInfo>Digital Grinnell</titleInfo>
+  </relatedItem>
+  <relatedItem type="isPartOf">
+    <titleInfo>Life at Grinnell College</titleInfo>
+  </relatedItem>
+  <accessCondition type="useAndReproduction">Copyright to this work is held by the author(s), in accordance with United            States copyright law (USC 17). Readers of this work have certain rights as defined by            the law, including but not limited to fair use (17 USC 107 et seq.).</accessCondition>
+</mods>

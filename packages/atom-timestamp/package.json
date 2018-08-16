@@ -1,0 +1,67 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/d-118716-1813-kehm8.3e2wukgldi/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/d-118716-1813-kehm8.3e2wukgldi/package.tgz",
+        "spec": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/d-118716-1813-kehm8.3e2wukgldi/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/apm-install-dir-118716-1813-1ymm184.0fe6i27qfr"
+    ]
+  ],
+  "_from": "../d-118716-1813-kehm8.3e2wukgldi/package.tgz",
+  "_id": "atom-timestamp@0.0.9",
+  "_inCache": true,
+  "_location": "/atom-timestamp",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/d-118716-1813-kehm8.3e2wukgldi/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/d-118716-1813-kehm8.3e2wukgldi/package.tgz",
+    "spec": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/d-118716-1813-kehm8.3e2wukgldi/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-118716-1813-kehm8.3e2wukgldi/package.tgz",
+  "_shasum": "d2804366886fb6b099e9dc1cb4cc2dbb1956439c",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/d-118716-1813-kehm8.3e2wukgldi/package.tgz",
+  "_where": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/apm-install-dir-118716-1813-1ymm184.0fe6i27qfr",
+  "author": {
+    "name": "jo-o-jj"
+  },
+  "bugs": {
+    "url": "https://github.com/jo-o-jj/atom-timestamp/issues"
+  },
+  "dependencies": {
+    "moment": ">=2.18.1"
+  },
+  "description": "Update timestamp comment",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/jo-o-jj/atom-timestamp#readme",
+  "keywords": [
+    "timestamp"
+  ],
+  "license": "MIT",
+  "main": "./lib/atom-timestamp",
+  "name": "atom-timestamp",
+  "optionalDependencies": {},
+  "readme": "# atom-timestamp\n\nUpdate timestamp comments like `Time-stamp: <Jun 02 2006>`, `Time-stamp: <2006-01-02 15:04:05>` to current date/time\n\nThis package uses [Moment.js](http://momentjs.com/) library for parsing/updating timestamp\n\n## Installation\n\nUse apm command:\n\n```sh\n$ apm install atom-timestamp\n```\n\nor search for `atom-timestamp` in Atom.\n\n## Usage\n\n### Settings\n\n* `Timestamp Prefix`, `Timestamp Suffix` - Regular expression pattern for timestamp prefix/suffix.\n* `Timestamp Formats` - Format-string for parsing/updating timestamp. Use [Moment.js format](http://momentjs.com/docs/#/displaying/format/). Time zone tokens (`z`, `zz`) and localized formats (`L`, `l`, ...) do not work.\n* `Scope Selector` - Regular expression pattern for [scope name](http://flight-manual.atom.io/behind-atom/sections/scoped-settings-scopes-and-scope-descriptors/) in syntax. By default, atom-timestamp only works in comments in syntax or plain text file.\n* `Number Of Lines` - Number of lines from the beginning to search timestamp comments.\n\n### Commands\n\n* `atom-timestamp:update-timestamp` - Update timestamp comments to current date/time\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jo-o-jj/atom-timestamp.git"
+  },
+  "version": "0.0.9"
+}
