@@ -8,7 +8,7 @@ Git user 'McFateM' has been added as a collaborator to this repo.
 Suggested first use...  
   
   ```
-  git clone https://github.com/SummittDweller/Atom-Config.git ~/.atom`
+  git clone https://github.com/SummittDweller/Atom-Config.git ~/.atom
   ```
 
 To update after just...  
