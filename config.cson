@@ -1,5 +1,14 @@
 "*":
   "SFTP-deployment": {}
+  "atom-timestamp":
+    numberOfLines: 10
+    scopeSelector: "^comment\\b|plain\\.text|text\\.plain\\.null-grammar"
+    timestampFormats: [
+      "YYYY-MM-DD HH:mm:ss a"
+      "LLLL"
+    ]
+    timestampPrefix: "Modified:[ \\t]+[\"]?"
+    timestampSuffix: "[\"]?$"
   core:
     telemetryConsent: "no"
   editor:
