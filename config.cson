@@ -2,7 +2,7 @@
   "SFTP-deployment": {}
   "atom-timestamp":
     numberOfLines: 10
-    scopeSelector: "^comment\\b|plain\\.text|text\\.plain\\.null-grammar"
+    scopeSelector: "^comment\\b|plain\\.text|text\\.plain\\.null-grammar|source.gfm"
     timestampFormats: [
       "YYYY-MM-DD HH:mm:ss a"
       "LLLL"
