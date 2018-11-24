@@ -1,8 +1,15 @@
 {$, $$, EditorView} = require 'atom-space-pen-views'
 
 git = require '../git'
-notifier = require '../notifier'
+ActivityLogger = require('../activity-logger').default
+Repository = require('../repository').default
 SelectListMultipleView = require './select-list-multiple-view'
+
+prettify = (data) ->
+  result = data.match(/rm ('.*')/g)
+  if result?.length >= 1
+    for file, i in result
+      result[i] = ' ' + file.match(/rm '(.*)'/)[1]
 
 module.exports =
 class SelectStageFilesView extends SelectListMultipleView
@@ -50,11 +57,9 @@ class SelectStageFilesView extends SelectListMultipleView
 
     editor = atom.workspace.getActiveTextEditor()
     atom.views.getView(editor).remove() if currentFile in files
+    repoName = new Repository(@repo).getName()
     git.cmd(['rm', '-f'].concat(files), cwd: @repo.getWorkingDirectory())
-    .then (data) -> notifier.addSuccess "Removed #{prettify data}"
-
-  prettify = (data) ->
-    data = data.match(/rm ('.*')/g)
-    if data?.length >= 1
-      for file, i in data
-        data[i] = ' ' + file.match(/rm '(.*)'/)[1]
+    .then (data) ->
+      ActivityLogger.record({repoName, message: "Remove '#{prettify(data)}'", output: data})
+    .catch (data) ->
+      ActivityLogger.record({repoName, message: "Remove '#{prettify(data)}'", output: data, failed: true})

@@ -44,11 +44,15 @@ module.exports =
       editorCommands["markdown-writer:insert-#{media}"] =
         @registerView("./views/insert-#{media}-view")
 
-    ["code", "codeblock", "bold", "italic", "strikethrough", "keystroke"].forEach (style) =>
+    ["code", "codeblock", "math", "mathblock",
+     "bold", "italic", "strikethrough", "keystroke",
+     "deletion", "addition", "substitution", "comment", "highlight"
+    ].forEach (style) =>
       editorCommands["markdown-writer:toggle-#{style}-text"] =
         @registerCommand("./commands/style-text", args: style)
 
-    ["h1", "h2", "h3", "h4", "h5", "ul", "ol", "task", "taskdone", "blockquote"].forEach (style) =>
+    ["h1", "h2", "h3", "h4", "h5", "ul", "ol",
+     "task", "taskdone", "blockquote"].forEach (style) =>
       editorCommands["markdown-writer:toggle-#{style}"] =
         @registerCommand("./commands/style-line", args: style)
 
@@ -56,14 +60,18 @@ module.exports =
       editorCommands["markdown-writer:jump-to-#{command}"] =
         @registerCommand("./commands/jump-to", args: command)
 
-    ["insert-new-line", "indent-list-line"].forEach (command) =>
+    ["insert-new-line", "indent-list-line", "undent-list-line"].forEach (command) =>
       editorCommands["markdown-writer:#{command}"] =
         @registerCommand("./commands/edit-line",
           args: command, skipList: ["autocomplete-active"])
 
-    ["correct-order-list-numbers", "format-table"].forEach (command) =>
+    ["correct-order-list-numbers", "format-order-list", "format-table"].forEach (command) =>
       editorCommands["markdown-writer:#{command}"] =
         @registerCommand("./commands/format-text", args: command)
+
+    ["fold-links"].forEach (command) =>
+      editorCommands["markdown-writer:#{command}"] =
+        @registerCommand("./commands/fold-text", args: command)
 
     ["publish-draft", "open-link-in-browser", "insert-image"].forEach (command) =>
       editorCommands["markdown-writer:#{command}"] =

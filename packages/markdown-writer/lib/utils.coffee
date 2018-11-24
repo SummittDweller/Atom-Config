@@ -15,6 +15,10 @@ escapeRegExp = (str) ->
   return "" unless str
   str.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&")
 
+capitalize = (str) ->
+  return "" unless str
+  str.replace /^[a-z]/, (c) -> c.toUpperCase()
+
 isUpperCase = (str) ->
   if str.length > 0 then (str[0] >= 'A' && str[0] <= 'Z')
   else false
@@ -302,6 +306,13 @@ parseInlineLink = (input) ->
   else
     text: input, url: "", title: ""
 
+scanLinks = (editor, cb) ->
+  editor.buffer.scan /// #{INLINE_LINK_REGEX.source} ///g, (match) ->
+    rg = match.range
+    rg.start.column += match.match[1].length + 3 # [](
+    rg.end.column -= 1
+    cb(rg)
+
 # ==================================================
 # Reference link
 #
@@ -565,8 +576,9 @@ getScopeDescriptor = (cursor, scopeSelector) ->
     return scopes[0]
 
 getBufferRangeForScope = (editor, cursor, scopeSelector) ->
-  pos = cursor.getBufferPosition()
+  return unless scopeSelector # remove undefined scopeSelector
 
+  pos = cursor.getBufferPosition()
   range = editor.bufferRangeForScopeAtPosition(scopeSelector, pos)
   return range if range
 
@@ -589,31 +601,39 @@ getBufferRangeForScope = (editor, cursor, scopeSelector) ->
 # Get the text buffer range if selection is not empty, or get the
 # buffer range if it is inside a scope selector, or the current word.
 #
-# selection: optional, when not provided or empty, use the last selection
+# opts["selection"]: optional, when not provided or empty, use the last selection
 # opts["selectBy"]:
 #  - nope: do not use any select by
 #  - nearestWord: try select nearest word, default
 #  - currentLine: try select current line
-getTextBufferRange = (editor, scopeSelector, selection, opts = {}) ->
-  if typeof(selection) == "object"
-    opts = selection
-    selection = undefined
+getTextBufferRange = (editor, scopeSelector, opts = {}) ->
+  selection = opts.selection || editor.getLastSelection()
+  selectBy = opts.selectBy || "nearestWord"
 
-  selection ?= editor.getLastSelection()
   cursor = selection.cursor
-  selectBy = opts["selectBy"] || "nearestWord"
+  range = if selection.getText()
+            selection.getBufferRange()
+          else if scope = getScopeDescriptor(cursor, scopeSelector)
+            getBufferRangeForScope(editor, cursor, scope)
+          else if selectBy == "nearestWord"
+            wordRegex = cursor.wordRegExp(includeNonWordCharacters: false)
+            cursor.getCurrentWordBufferRange(wordRegex: wordRegex)
+          else if selectBy == "currentWord"
+            cursor.getCurrentWordBufferRange()
+          else if selectBy == "currentNonTrailWord"
+            wordRange = cursor.getCurrentWordBufferRange()
+            # test if cursor is at the end of word
+            if wordRange && wordRange.end.column == cursor.getBufferColumn()
+              selection.getBufferRange()
+            else
+              wordRange
+          else if selectBy == "currentLine"
+            cursor.getCurrentLineBufferRange()
+          else if selectBy == "currentParagraph"
+            cursor.getCurrentParagraphBufferRange() # could get undefined when cursor is on an empty line
 
-  if selection.getText()
-    selection.getBufferRange()
-  else if scope = getScopeDescriptor(cursor, scopeSelector)
-    getBufferRangeForScope(editor, cursor, scope)
-  else if selectBy == "nearestWord"
-    wordRegex = cursor.wordRegExp(includeNonWordCharacters: false)
-    cursor.getCurrentWordBufferRange(wordRegex: wordRegex)
-  else if selectBy == "currentLine"
-    cursor.getCurrentLineBufferRange()
-  else
-    selection.getBufferRange()
+  # return range or default selection range, make sure there is a range returned
+  range || selection.getBufferRange()
 
 # Find a possible link tag in the range from editor, return the found link data or nil
 #
@@ -648,6 +668,7 @@ findLinkInRange = (editor, range) ->
 module.exports =
   getJSON: getJSON
   escapeRegExp: escapeRegExp
+  capitalize: capitalize
   isUpperCase: isUpperCase
   incrementChars: incrementChars
   slugize: slugize
@@ -672,6 +693,7 @@ module.exports =
   isImage: isImage
   parseImage: parseImage
 
+  scanLinks: scanLinks
   isInlineLink: isInlineLink
   parseInlineLink: parseInlineLink
   isReferenceLink: isReferenceLink

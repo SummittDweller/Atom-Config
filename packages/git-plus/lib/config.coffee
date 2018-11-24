@@ -19,37 +19,36 @@ module.exports =
         description: "If git is not in your PATH, specify where the executable is"
       enableStatusBarIcon:
         order: 2
-        title: "Status-bar Pin Icon"
+        title: "Status-bar Icon"
         type: "boolean"
         default: true
-        description: "The pin icon in the bottom-right of the status-bar toggles the output view above the status-bar"
-      newBranchKey:
-        order: 3
-        title: "Status-bar New Branch modifier key"
-        type: "string"
-        default: "alt"
-        description: "Status-bar branch list modifier key to alternatively create a new branch if held on click. Note that _[`meta`](#{meta.define})_ is <kbd>#{meta.key}</kbd>"
-        enum: ["alt", "shift", "meta", "ctrl"]
+        description: "The 'git+' icon in the bottom-right of the status-bar toggles the output view above the status-bar"
       openInPane:
-        order: 4
+        order: 3
         title: "Allow commands to open new panes"
         type: "boolean"
         default: true
         description: "Commands like `Commit`, `Log`, `Show`, `Diff` can be split into new panes"
       splitPane:
-        order: 5
+        order: 4
         title: "Split pane direction"
         type: "string"
         default: "Down"
         description: "Where should new panes go?"
         enum: ["Up", "Right", "Down", "Left"]
       showFormat:
-        order: 6
+        order: 5
         title: "Format option for 'Git Show'"
         type: "string"
         default: "full"
         enum: ["oneline", "short", "medium", "full", "fuller", "email", "raw", "none"]
         description: "Which format to use for `git show`? (`none` will use your git config default)"
+      alwaysOpenDockWithResult:
+        order: 6
+        title: "Always show result output"
+        type: "boolean"
+        default: false
+        description: "Always display bottom dock with output after command is complete (regardless of dock visibility)"
   commits:
     order: 2
     type: "object"
@@ -79,6 +78,12 @@ module.exports =
         title: "Enable syntax highlighting in diffs?"
         type: "boolean"
         default: true
+      useSplitDiff:
+        order: 4
+        title: "Split diff"
+        type: "boolean"
+        default: false
+        description: "Use the split-diff package to show diffs for a single file. Only works with `Diff` command when a file is open."
   logs:
     order: 4
     type: "object"
@@ -131,40 +136,34 @@ module.exports =
     order: 7
     type: "object"
     properties:
-      stageFilesBeta:
-        order: 1
-        title: "Stage Files Beta"
-        type: "boolean"
-        default: true
-        description: "Stage and unstage files in a single command"
       customCommands:
-        order: 2
+        order: 1
         title: "Custom Commands"
         type: "boolean"
         default: false
         description: "Declared custom commands in your `init` file that can be run from the Git-plus command palette"
       diffBranches:
-        order: 3
+        order: 2
         title: "Show diffs across branches"
         type: "boolean"
         default: false
         description: "Diffs will be shown for the current branch against a branch you choose. The `Diff branch files` command will allow choosing which file to compare. The file feature requires the 'split-diff' package to be installed."
-      useSplitDiff:
-        order: 4
-        title: "Split diff"
-        type: "boolean"
-        default: false
-        description: "Use the split-diff package to show diffs for a single file. Only works with `Diff` command when a file is open."
       autoFetch:
-        order: 5
+        order: 3
         title: "Auto-fetch"
         type: "integer"
         default: 0
         maximum: 60
         description: "Automatically fetch remote repositories every `x` minutes (`0` will disable this feature)"
       autoFetchNotify:
-        order: 6
+        order: 4
         title: "Auto-fetch notification"
         type: "boolean"
         default: false
         description: "Show notifications while running `fetch --all`?"
+      betaOutputView:
+        order: 5
+        title: 'Improved output view'
+        type: "boolean"
+        default: true
+        description: "The new pane will show all executed git commands and their results"

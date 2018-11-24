@@ -1,11 +1,12 @@
 git = require './git'
 
 getCommands = ->
+  gitAdd                = require('./models/add').default
+  gitAddModified        = require('./models/add-modified').default
   GitCheckoutNewBranch   = require './models/git-checkout-new-branch'
   GitCheckoutBranch      = require './models/git-checkout-branch'
   GitDeleteBranch        = require './models/git-delete-branch'
-  GitCheckoutAllFiles    = require './models/git-checkout-all-files'
-  GitCheckoutFile        = require './models/git-checkout-file'
+  gitCheckoutFile        = require('./models/checkout-file').default
   GitCherryPick          = require './models/git-cherry-pick'
   GitCommit              = require './models/git-commit'
   GitCommitAmend         = require './models/git-commit-amend'
@@ -14,18 +15,18 @@ getCommands = ->
   GitDiffBranchFiles     = require './models/git-diff-branch-files'
   GitDifftool            = require './models/git-difftool'
   GitDiffAll             = require './models/git-diff-all'
-  GitFetch               = require './models/git-fetch'
-  GitFetchAll            = require './models/git-fetch-all'
-  GitFetchPrune          = require './models/git-fetch-prune'
+  gitFetch               = require('./models/fetch').default
+  gitFetchInAllRepos            = require('./models/fetch-in-all-repos').default
   GitInit                = require './models/git-init'
   GitLog                 = require './models/git-log'
-  GitPull                = require './models/git-pull'
-  GitPush                = require './models/git-push'
+  gitPull                = require('./models/pull').default
+  gitPush                = require('./models/push').default
+  gitReset                = require('./models/reset').default
   GitRemove              = require './models/git-remove'
   GitShow                = require './models/git-show'
   GitStageFiles          = require './models/git-stage-files'
-  GitStageFilesBeta      = require './models/git-stage-files-beta'
   GitStageHunk           = require './models/git-stage-hunk'
+  ManageStashes               = require './models/manage-stashes'
   GitStashApply          = require './models/git-stash-apply'
   GitStashDrop           = require './models/git-stash-drop'
   GitStashPop            = require './models/git-stash-pop'
@@ -33,15 +34,12 @@ getCommands = ->
   GitStashSaveMessage    = require './models/git-stash-save-message'
   GitStatus              = require './models/git-status'
   GitTags                = require './models/git-tags'
-  GitUnstageFiles        = require './models/git-unstage-files'
   GitRun                 = require './models/git-run'
   GitMerge               = require './models/git-merge'
   GitRebase              = require './models/git-rebase'
   GitOpenChangedFiles    = require './models/git-open-changed-files'
 
   commands = []
-  git.getAllRepos().then (repos) ->
-    commands.push ['git-plus:fetch-all', 'Fetch All', -> GitFetchAll(repos)]
 
   git.getRepo()
     .then (repo) ->
@@ -49,14 +47,14 @@ getCommands = ->
       git.refresh repo
       if atom.config.get('git-plus.experimental.customCommands')
         commands = commands.concat(require('./service').getCustomCommands())
-      commands.push ['git-plus:add', 'Add', -> git.add(repo, file: currentFile)]
-      commands.push ['git-plus:add-modified', 'Add Modified', -> git.add(repo, update: true)]
-      commands.push ['git-plus:add-all', 'Add All', -> git.add(repo)]
+      commands.push ['git-plus:add', 'Add', gitAdd]
+      commands.push ['git-plus:add-modified', 'Add Modified', gitAddModified]
+      commands.push ['git-plus:add-all', 'Add All', -> gitAdd(true)]
       commands.push ['git-plus:log', 'Log', -> GitLog(repo)]
       commands.push ['git-plus:log-current-file', 'Log Current File', -> GitLog(repo, onlyCurrentFile: true)]
       commands.push ['git-plus:remove-current-file', 'Remove Current File', -> GitRemove(repo)]
-      commands.push ['git-plus:checkout-all-files', 'Checkout All Files', -> GitCheckoutAllFiles(repo)]
-      commands.push ['git-plus:checkout-current-file', 'Checkout Current File', -> GitCheckoutFile(repo, file: currentFile)]
+      commands.push ['git-plus:checkout-all-files', 'Checkout All Files', -> gitCheckoutFile(true)]
+      commands.push ['git-plus:checkout-current-file', 'Checkout Current File', -> gitCheckoutFile()]
       commands.push ['git-plus:commit', 'Commit', -> GitCommit(repo)]
       commands.push ['git-plus:commit-all', 'Commit All', -> GitCommit(repo, stageChanges: true)]
       commands.push ['git-plus:commit-amend', 'Commit Amend', -> GitCommitAmend(repo)]
@@ -77,20 +75,18 @@ getCommands = ->
         commands.push ['git-plus:diff-branch-files', 'Diff branch files', -> GitDiffBranchFiles(repo)]
       commands.push ['git-plus:difftool', 'Difftool', -> GitDifftool(repo)]
       commands.push ['git-plus:diff-all', 'Diff All', -> GitDiffAll(repo)]
-      commands.push ['git-plus:fetch', 'Fetch', -> GitFetch(repo)]
-      commands.push ['git-plus:fetch-prune', 'Fetch Prune', -> GitFetchPrune(repo)]
-      commands.push ['git-plus:pull', 'Pull', -> GitPull(repo)]
-      commands.push ['git-plus:push', 'Push', -> GitPush(repo)]
-      commands.push ['git-plus:push-set-upstream', 'Push -u', -> GitPush(repo, setUpstream: true)]
+      commands.push ['git-plus:fetch', 'Fetch', gitFetch]
+      commands.push ['git-plus:fetch-all', 'Fetch All (Repos & Remotes)', gitFetchInAllRepos]
+      commands.push ['git-plus:fetch-prune', 'Fetch Prune', -> gitFetch({prune: true})]
+      commands.push ['git-plus:pull', 'Pull', gitPull]
+      commands.push ['git-plus:push', 'Push', gitPush]
+      commands.push ['git-plus:push-set-upstream', 'Push -u', -> gitPush(true)]
       commands.push ['git-plus:remove', 'Remove', -> GitRemove(repo, showSelector: true)]
-      commands.push ['git-plus:reset', 'Reset HEAD', -> git.reset(repo)]
+      commands.push ['git-plus:reset', 'Reset HEAD', gitReset]
       commands.push ['git-plus:show', 'Show', -> GitShow(repo)]
-      if atom.config.get('git-plus.experimental.stageFilesBeta')
-        commands.push ['git-plus:stage-files', 'Stage Files', -> GitStageFilesBeta(repo)]
-      else
-        commands.push ['git-plus:stage-files', 'Stage Files', -> GitStageFiles(repo)]
-        commands.push ['git-plus:unstage-files', 'Unstage Files', -> GitUnstageFiles(repo)]
+      commands.push ['git-plus:stage-files', 'Stage Files', -> GitStageFiles(repo)]
       commands.push ['git-plus:stage-hunk', 'Stage Hunk', -> GitStageHunk(repo)]
+      commands.push ['git-plus:manage-stashes', 'Manage Stashes', ManageStashes.default]
       commands.push ['git-plus:stash-save', 'Stash: Save Changes', -> GitStashSave(repo)]
       commands.push ['git-plus:stash-save-message', 'Stash: Save Changes With Message', -> GitStashSaveMessage(repo)]
       commands.push ['git-plus:stash-pop', 'Stash: Apply (Pop)', -> GitStashPop(repo)]

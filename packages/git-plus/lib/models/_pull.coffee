@@ -1,6 +1,7 @@
 git = require '../git'
 notifier = require '../notifier'
-OutputViewManager = require '../output-view-manager'
+ActivityLogger = require('../activity-logger').default
+Repository = require('../repository').default
 
 emptyOrUndefined = (thing) -> thing isnt '' and thing isnt undefined
 
@@ -13,16 +14,18 @@ getUpstream = (repo) ->
 
 module.exports = (repo, {extraArgs}={}) ->
   if upstream = getUpstream(repo)
+    if typeof extraArgs is 'string' then extraArgs = [extraArgs]
     extraArgs ?= []
-    view = OutputViewManager.getView()
     startMessage = notifier.addInfo "Pulling...", dismissable: true
+    recordMessage ="""pull #{extraArgs.join(' ')}"""
     args = ['pull'].concat(extraArgs).concat(upstream).filter(emptyOrUndefined)
+    repoName = new Repository(repo).getName()
     git.cmd(args, cwd: repo.getWorkingDirectory(), {color: true})
-    .then (data) ->
-      view.showContent(data)
+    .then (output) ->
+      ActivityLogger.record({message: recordMessage, output, repoName})
       startMessage.dismiss()
-    .catch (error) ->
-      view.showContent(error)
+    .catch (output) ->
+      ActivityLogger.record({message: recordMessage, output, repoName, failed: true})
       startMessage.dismiss()
   else
     notifier.addInfo 'The current branch is not tracking from upstream'

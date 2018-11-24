@@ -7,7 +7,7 @@
       "YYYY-MM-DD HH:mm:ss a"
       "LLLL"
     ]
-    timestampPrefix: "Modified:[ \\t]+[\"]?"
+    timestampPrefix: "date:[ \\t]+[\"]?"
     timestampSuffix: "[\"]?$"
   core:
     telemetryConsent: "no"
