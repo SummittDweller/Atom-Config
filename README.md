@@ -1,4 +1,4 @@
-Modified: Thursday, September 6, 2018 11:40 AM
+Modified: Saturday, November 24, 2018 11:21 AM
 
 This is the Atom (~/.atom) configuration from my personal MacBook Air.  
 It was initialized on the morning of 16-August-2018 as https://github.com/SummittDweller/Atom-Config.git.  
@@ -22,4 +22,4 @@ To update after just...
 
 ```
 
-To add the 'Modified' date/timestamp to any file just copy the top line of this README.md file and paste it near the top of your intended file.  From that point on Atom _should_ change the timestamp each time the file is saved.
+To add the 'Modified:' or 'date:' date/timestamp to any file just copy the top line of this README.md file and paste it near the top of your intended file.  From that point on Atom _should_ change the timestamp each time the file is saved.

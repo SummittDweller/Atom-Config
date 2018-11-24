@@ -6,8 +6,9 @@
     timestampFormats: [
       "YYYY-MM-DD HH:mm:ss a"
       "LLLL"
+      "YYYY-MM-DD[T]HH:mm:ssZ"
     ]
-    timestampPrefix: "date:[ \\t]+[\"]?"
+    timestampPrefix: "[date|Modified]:[ \\t]+[\"]?"
     timestampSuffix: "[\"]?$"
   core:
     telemetryConsent: "no"
