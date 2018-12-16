@@ -65,11 +65,15 @@ module.exports =
         @registerCommand("./commands/edit-line",
           args: command, skipList: ["autocomplete-active"])
 
+    ["insert-toc", "update-toc"].forEach (command) =>
+      editorCommands["markdown-writer:#{command}"] =
+        @registerCommand("./commands/edit-toc", args: command)
+
     ["correct-order-list-numbers", "format-order-list", "format-table"].forEach (command) =>
       editorCommands["markdown-writer:#{command}"] =
         @registerCommand("./commands/format-text", args: command)
 
-    ["fold-links"].forEach (command) =>
+    ["fold-links", "fold-headings", "fold-h1", "fold-h2", "fold-h3", "focus-current-heading"].forEach (command) =>
       editorCommands["markdown-writer:#{command}"] =
         @registerCommand("./commands/fold-text", args: command)
 
