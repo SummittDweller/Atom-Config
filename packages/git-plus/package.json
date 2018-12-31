@@ -1,25 +1,25 @@
 {
-  "_from": "https://www.atom.io/api/packages/git-plus/versions/8.2.1/tarball",
-  "_id": "git-plus@8.2.1",
+  "_from": "https://www.atom.io/api/packages/git-plus/versions/8.3.0/tarball",
+  "_id": "git-plus@8.3.0",
   "_inBundle": false,
-  "_integrity": "sha512-50JBQ6vgw9YJ7a69p2V2jS0358te6E6ieZtOlGnANhxwG05lsmmoyaoilLMNGpcUmZKqN+Fdgvlnrigh3JKQcg==",
+  "_integrity": "sha512-eB2J/KOQYDRxpAvyDSiE+laTmlahcBQW0Tr61SUei7fnAIlf4Vwe5uqkUd35teSkaQdFoQ31u9KDI5/jbaqA4Q==",
   "_location": "/git-plus",
   "_phantomChildren": {},
   "_requested": {
     "type": "remote",
-    "raw": "https://www.atom.io/api/packages/git-plus/versions/8.2.1/tarball",
-    "rawSpec": "https://www.atom.io/api/packages/git-plus/versions/8.2.1/tarball",
-    "saveSpec": "https://www.atom.io/api/packages/git-plus/versions/8.2.1/tarball",
-    "fetchSpec": "https://www.atom.io/api/packages/git-plus/versions/8.2.1/tarball"
+    "raw": "https://www.atom.io/api/packages/git-plus/versions/8.3.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/git-plus/versions/8.3.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/git-plus/versions/8.3.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/git-plus/versions/8.3.0/tarball"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://www.atom.io/api/packages/git-plus/versions/8.2.1/tarball",
-  "_shasum": "f710faa5d342a39f72c2d5c0b0f50c2adbe96080",
-  "_spec": "https://www.atom.io/api/packages/git-plus/versions/8.2.1/tarball",
-  "_where": "/private/var/folders/bb/9r30j_6x1fgc88pfj4g_w3q00000gn/T/apm-install-dir-1181116-15208-1g5wizg.umlu",
+  "_resolved": "https://www.atom.io/api/packages/git-plus/versions/8.3.0/tarball",
+  "_shasum": "5cb29d93e2146d817ed0aa5b3b5a5482a8e943b8",
+  "_spec": "https://www.atom.io/api/packages/git-plus/versions/8.3.0/tarball",
+  "_where": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/apm-install-dir-1181131-80965-1m272sy.xnff",
   "atomTranspilers": [
     {
       "glob": "{lib,spec}/**/*.js",
@@ -28,7 +28,6 @@
         "babel": {
           "presets": [
             "env",
-            "flow",
             "react"
           ],
           "plugins": [
@@ -68,6 +67,11 @@
       "versions": {
         "1.0.0": "consumeAutosave"
       }
+    },
+    "tree-view": {
+      "versions": {
+        "1.0.0": "consumeTreeView"
+      }
     }
   },
   "dependencies": {
@@ -83,7 +87,6 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "classnames": "^2.2.6",
     "fs-plus": "^2.2.0",
@@ -103,9 +106,7 @@
     "atom-transpiler-debug-tool": "^1.0.5",
     "babel-eslint": "^8.2.5",
     "eslint": "^5.0.1",
-    "eslint-plugin-flowtype": "^2.50.0",
     "eslint-plugin-react": "^7.10.0",
-    "flow-bin": "^0.75.0",
     "lint": "^1.1.2",
     "prettier": "^1.13.6",
     "quibble": "^0.3.0",
@@ -138,8 +139,7 @@
   },
   "scripts": {
     "debug": "atom-transpiler-debug-tool",
-    "flow": "flow",
     "test": "eslint --fix \"lib/**/*.js\" \"spec/**/*.js\" && apm test"
   },
-  "version": "8.2.1"
+  "version": "8.3.0"
 }
