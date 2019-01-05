@@ -1,6 +1,6 @@
 import "@babel/polyfill";
 import { CompositeDisposable, Disposable } from "atom";
-import OutputView from "./views/output-view/container";
+import { OutputViewContainer } from "./views/output-view/container";
 import git from "./git";
 import configurations from "./config";
 import { initializeContextMenu } from "./context-menu";
@@ -86,6 +86,14 @@ module.exports = {
   activate(_state) {
     setDiffGrammar();
     const repos = getWorkspaceRepos();
+    this.outputView = new OutputViewContainer();
+
+    atom.workspace.addOpener(uri => {
+      if (uri === OutputViewContainer.URI) {
+        if (this.outputView.isDestroyed) this.outputView = new OutputViewContainer();
+        return this.outputView;
+      }
+    });
 
     atom.project.onDidChangePaths(_paths => onPathsChanged(this));
 
@@ -94,13 +102,6 @@ module.exports = {
         atom.commands.add("atom-workspace", "git-plus:init", () => GitInit().then(this.activate))
       );
     if (repos.length > 0) {
-      atom.workspace.addOpener(uri => {
-        if (uri === OutputView.URI) {
-          if (!this.outputView || this.outputView.isDestroyed) this.outputView = new OutputView();
-          return this.outputView;
-        }
-      });
-      atom.workspace.open(OutputView.URI, { activatePane: false, activateItem: false });
       initializeContextMenu();
       this.subscriptions.add(
         atom.commands.add("atom-workspace", {
@@ -198,6 +199,10 @@ module.exports = {
           "git-plus:rebase": () => git.getRepo().then(repo => GitRebase(repo)),
           "git-plus:git-open-changed-files": () => {
             git.getRepo().then(repo => GitOpenChangedFiles(repo));
+          },
+          "git-plus:toggle-output-view": () => {
+            if (!this.outputView) this.outputView = new OutputViewContainer();
+            this.outputView.toggle();
           }
         })
       );
@@ -245,8 +250,11 @@ module.exports = {
   },
 
   deserializeOutputView(_state) {
-    if (!this.outputView) this.outputView = new OutputView();
-    return this.outputView;
+    if (!this.outputView) {
+      this.outputView = new OutputViewContainer();
+      return this.outputView;
+    }
+    return null; // there should only be one view so never deserialize more
   },
 
   deactivate() {
@@ -290,7 +298,10 @@ module.exports = {
     icon.textContent = "git+";
     const link = document.createElement("a");
     link.appendChild(icon);
-    link.onclick = _e => this.outputView && this.outputView.toggle();
+    link.onclick = _e => {
+      if (this.outputView.isDestroyed) this.outputView = new OutputViewContainer();
+      this.outputView.toggle();
+    };
     atom.tooltips.add(div, { title: "Toggle Git-Plus Output" });
     div.appendChild(link);
     this.statusBarTile = statusBar.addRightTile({ item: div, priority: 0 });

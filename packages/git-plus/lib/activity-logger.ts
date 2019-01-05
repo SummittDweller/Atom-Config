@@ -1,4 +1,5 @@
 import { Disposable } from "atom";
+import { OutputViewContainer } from "./views/output-view/container";
 
 // taken from: https://gist.github.com/jed/982883
 const makeId: (...args: any[]) => string = a =>
@@ -18,12 +19,38 @@ export interface Record extends RecordAttributes {
 
 class ActivityLogger {
   listeners: Set<Function> = new Set();
+  private _records: Record[] = [];
 
-  record(record: RecordAttributes) {
-    // TODO: see if output-view is visible and create a notification if it won't be
-    window.requestIdleCallback(() =>
-      this.listeners.forEach(listener => listener({ ...record, id: makeId() }))
-    );
+  get records() {
+    return this._records;
+  }
+
+  record(attributes: RecordAttributes) {
+    const record = { ...attributes, id: makeId() };
+
+    if (
+      record.failed &&
+      !atom.config.get("git-plus.general.alwaysOpenDockWithResult") &&
+      !OutputViewContainer.isVisible()
+    ) {
+      atom.notifications.addError(`Unable to complete command: ${record.message}`, {
+        detail: record.output,
+        buttons: [
+          {
+            text: "Open Output View",
+            onDidClick: () => {
+              atom.commands.dispatch(
+                document.querySelector("atom-workspace")!,
+                "git-plus:toggle-output-view"
+              );
+            }
+          }
+        ]
+      });
+    }
+
+    this._records.push(record);
+    window.requestIdleCallback(() => this.listeners.forEach(listener => listener(record)));
   }
 
   onDidRecordActivity(callback: (record: Record) => any): Disposable {
