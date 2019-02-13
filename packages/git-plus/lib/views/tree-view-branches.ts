@@ -40,7 +40,10 @@ export class TreeViewBranchManager {
   renderBranch = async (path: string) => {
     if (!this.isEnabled) return;
     const repo = (await getRepoForPath(path)) as GitRepository;
+<<<<<<< HEAD
     if (!repo) return;
+=======
+>>>>>>> 6fe68eab098db201f24d373e4a19f56ef76377cb
     const branchName = `[${repo!.getShortHead()}]`;
     const entry = this.treeView.entryForPath(repo.getWorkingDirectory());
 
