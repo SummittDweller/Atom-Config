@@ -14,6 +14,12 @@
     telemetryConsent: "no"
   editor:
     preferredLineLength: 120
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+    softWrapHangingIndent: 4
+    tabType: "soft"
   "exception-reporting":
     userId: "9c239e0a-4d8b-8a48-51cd-fdbcf9182b6d"
   "git-plus":
