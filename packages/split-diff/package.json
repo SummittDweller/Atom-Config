@@ -19,11 +19,7 @@
   "_resolved": "https://www.atom.io/api/packages/split-diff/versions/1.6.0/tarball",
   "_shasum": "ad8e60e8cdc56cbe8cf76b86a81df1392e1ab410",
   "_spec": "https://www.atom.io/api/packages/split-diff/versions/1.6.0/tarball",
-<<<<<<< HEAD
   "_where": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/apm-install-dir-119026-15759-y6f94d.3yezd",
-=======
-  "_where": "/private/var/folders/l0/b_nd9x1n7y78m029rzml1kxr0000gp/T/apm-install-dir-119028-24501-h0qula.ff5tw",
->>>>>>> 6fe68eab098db201f24d373e4a19f56ef76377cb
   "bugs": {
     "url": "https://github.com/mupchrch/split-diff/issues"
   },

@@ -1,25 +1,25 @@
 {
-  "_from": "https://www.atom.io/api/packages/markdown-writer/versions/2.11.4/tarball",
-  "_id": "markdown-writer@2.11.4",
+  "_from": "https://www.atom.io/api/packages/markdown-writer/versions/2.11.5/tarball",
+  "_id": "markdown-writer@2.11.5",
   "_inBundle": false,
-  "_integrity": "sha512-9K70b+i4C1vmnEMkZ650/SRl3uio1J7ooXiDD8suYr4hT1A1y0pvOSXKindjZzAi1Ju/YgeMinwDqGA/Nfw9FA==",
+  "_integrity": "sha512-mrb3ud4XqyZJ5nFgp7eKoZRfFNYWHeIGmvvQuFidatCm/BnMBpFZYKcZwadRcSrCILJUkkloWThxnOZwPsGL1A==",
   "_location": "/markdown-writer",
   "_phantomChildren": {},
   "_requested": {
     "type": "remote",
-    "raw": "https://www.atom.io/api/packages/markdown-writer/versions/2.11.4/tarball",
-    "rawSpec": "https://www.atom.io/api/packages/markdown-writer/versions/2.11.4/tarball",
-    "saveSpec": "https://www.atom.io/api/packages/markdown-writer/versions/2.11.4/tarball",
-    "fetchSpec": "https://www.atom.io/api/packages/markdown-writer/versions/2.11.4/tarball"
+    "raw": "https://www.atom.io/api/packages/markdown-writer/versions/2.11.5/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/markdown-writer/versions/2.11.5/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/markdown-writer/versions/2.11.5/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/markdown-writer/versions/2.11.5/tarball"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://www.atom.io/api/packages/markdown-writer/versions/2.11.4/tarball",
-  "_shasum": "d0c386607b9c30467dba855f9e7800e1e60f18c8",
-  "_spec": "https://www.atom.io/api/packages/markdown-writer/versions/2.11.4/tarball",
-  "_where": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/apm-install-dir-119020-28490-gq157m.xriid",
+  "_resolved": "https://www.atom.io/api/packages/markdown-writer/versions/2.11.5/tarball",
+  "_shasum": "f64bbdbf84529c1e0b2aace45f41cd14e8086097",
+  "_spec": "https://www.atom.io/api/packages/markdown-writer/versions/2.11.5/tarball",
+  "_where": "/private/var/folders/l0/b_nd9x1n7y78m029rzml1kxr0000gp/T/apm-install-dir-119119-16563-r76bdt.3o64e",
   "activationCommands": {
     "atom-workspace": [
       "markdown-writer:new-post",
@@ -126,5 +126,5 @@
     "type": "git",
     "url": "git+https://github.com/zhuochun/md-writer.git"
   },
-  "version": "2.11.4"
+  "version": "2.11.5"
 }

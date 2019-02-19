@@ -1,46 +1,25 @@
 {
-<<<<<<< HEAD
   "_from": "https://www.atom.io/api/packages/git-plus/versions/8.6.1/tarball",
   "_id": "git-plus@8.6.1",
   "_inBundle": false,
   "_integrity": "sha512-2qOeRrH98MhriOIAuOf5XYNlOgrQM/ZZmS946DMJwy1zCJ5QUKmYcvpGOHQ+aT5SsoPtpfCfO9IOqKDg4U9ufA==",
-=======
-  "_from": "https://www.atom.io/api/packages/git-plus/versions/8.6.0/tarball",
-  "_id": "git-plus@8.6.0",
-  "_inBundle": false,
-  "_integrity": "sha512-2ntsRQs7crw6RGABLvzRW1v0wmLsggtREbJq4F6izhl87YLfSz2w00jQV/L/2V/hxd2tbhY0IQoUZcFvaTv5jw==",
->>>>>>> 6fe68eab098db201f24d373e4a19f56ef76377cb
   "_location": "/git-plus",
   "_phantomChildren": {},
   "_requested": {
     "type": "remote",
-<<<<<<< HEAD
     "raw": "https://www.atom.io/api/packages/git-plus/versions/8.6.1/tarball",
     "rawSpec": "https://www.atom.io/api/packages/git-plus/versions/8.6.1/tarball",
     "saveSpec": "https://www.atom.io/api/packages/git-plus/versions/8.6.1/tarball",
     "fetchSpec": "https://www.atom.io/api/packages/git-plus/versions/8.6.1/tarball"
-=======
-    "raw": "https://www.atom.io/api/packages/git-plus/versions/8.6.0/tarball",
-    "rawSpec": "https://www.atom.io/api/packages/git-plus/versions/8.6.0/tarball",
-    "saveSpec": "https://www.atom.io/api/packages/git-plus/versions/8.6.0/tarball",
-    "fetchSpec": "https://www.atom.io/api/packages/git-plus/versions/8.6.0/tarball"
->>>>>>> 6fe68eab098db201f24d373e4a19f56ef76377cb
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-<<<<<<< HEAD
   "_resolved": "https://www.atom.io/api/packages/git-plus/versions/8.6.1/tarball",
   "_shasum": "9c0727723472a1387f300fcd96387734c552dc2e",
   "_spec": "https://www.atom.io/api/packages/git-plus/versions/8.6.1/tarball",
   "_where": "/private/var/folders/jz/3f5518ns0t11j7b6q2fkd5p80000gn/T/apm-install-dir-119113-19718-11dvfus.jko3",
-=======
-  "_resolved": "https://www.atom.io/api/packages/git-plus/versions/8.6.0/tarball",
-  "_shasum": "ddba51fda17198da666e5742faa5155a5b7a846f",
-  "_spec": "https://www.atom.io/api/packages/git-plus/versions/8.6.0/tarball",
-  "_where": "/private/var/folders/kq/0mntlkfs4q53vf5dcns0f5th0000gn/T/apm-install-dir-11915-4218-fqz5oz.9c6zf",
->>>>>>> 6fe68eab098db201f24d373e4a19f56ef76377cb
   "atomTranspilers": [
     {
       "glob": "{lib,spec}/**/*.js",
@@ -163,9 +142,5 @@
     "debug": "atom-transpiler-debug-tool",
     "test": "eslint --fix \"lib/**/*.js\" \"spec/**/*.js\" && apm test"
   },
-<<<<<<< HEAD
   "version": "8.6.1"
-=======
-  "version": "8.6.0"
->>>>>>> 6fe68eab098db201f24d373e4a19f56ef76377cb
 }
