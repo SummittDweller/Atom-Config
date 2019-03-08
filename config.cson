@@ -23,6 +23,8 @@
   "exception-reporting":
     userId: "9c239e0a-4d8b-8a48-51cd-fdbcf9182b6d"
   "git-plus":
+    commits:
+      verboseCommits: true
     general:
       _analyticsUserId: "cbd3ebda-b393-4963-9a53-d57ff2fdf3f7"
   "remote-ftp":

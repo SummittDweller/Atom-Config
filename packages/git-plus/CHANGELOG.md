@@ -1,12 +1,9 @@
 ## Changelog
 
-<<<<<<< HEAD
 ### 8.6.1
 
 - Fix [#781](https://github.com/akonwi/git-plus/issues/781)
 
-=======
->>>>>>> 6fe68eab098db201f24d373e4a19f56ef76377cb
 ### 8.6.0
 
 - Show current branch next to the repo root in the tree view.
