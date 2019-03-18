@@ -1,25 +1,25 @@
 {
-  "_from": "https://www.atom.io/api/packages/git-plus/versions/8.6.1/tarball",
-  "_id": "git-plus@8.6.1",
+  "_from": "https://www.atom.io/api/packages/git-plus/versions/8.6.2/tarball",
+  "_id": "git-plus@8.6.2",
   "_inBundle": false,
-  "_integrity": "sha512-2qOeRrH98MhriOIAuOf5XYNlOgrQM/ZZmS946DMJwy1zCJ5QUKmYcvpGOHQ+aT5SsoPtpfCfO9IOqKDg4U9ufA==",
+  "_integrity": "sha512-k0hTS/hYpAe0FdE682vPPLM45R7rF4vSC5boDFXhvo+SW8M0sFMGvabfDU2Gxm+N0PWDo6X7O7YjS/xJ+amSrA==",
   "_location": "/git-plus",
   "_phantomChildren": {},
   "_requested": {
     "type": "remote",
-    "raw": "https://www.atom.io/api/packages/git-plus/versions/8.6.1/tarball",
-    "rawSpec": "https://www.atom.io/api/packages/git-plus/versions/8.6.1/tarball",
-    "saveSpec": "https://www.atom.io/api/packages/git-plus/versions/8.6.1/tarball",
-    "fetchSpec": "https://www.atom.io/api/packages/git-plus/versions/8.6.1/tarball"
+    "raw": "https://www.atom.io/api/packages/git-plus/versions/8.6.2/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/git-plus/versions/8.6.2/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/git-plus/versions/8.6.2/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/git-plus/versions/8.6.2/tarball"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://www.atom.io/api/packages/git-plus/versions/8.6.1/tarball",
-  "_shasum": "9c0727723472a1387f300fcd96387734c552dc2e",
-  "_spec": "https://www.atom.io/api/packages/git-plus/versions/8.6.1/tarball",
-  "_where": "/private/var/folders/l0/b_nd9x1n7y78m029rzml1kxr0000gp/T/apm-install-dir-11928-21509-1ofkhjq.0a27",
+  "_resolved": "https://www.atom.io/api/packages/git-plus/versions/8.6.2/tarball",
+  "_shasum": "d1033e3eeebc88fb4742d43d697c44da01a319a3",
+  "_spec": "https://www.atom.io/api/packages/git-plus/versions/8.6.2/tarball",
+  "_where": "/private/var/folders/l0/b_nd9x1n7y78m029rzml1kxr0000gp/T/apm-install-dir-119218-49995-tdsrmn.35pa7",
   "atomTranspilers": [
     {
       "glob": "{lib,spec}/**/*.js",
@@ -142,5 +142,5 @@
     "debug": "atom-transpiler-debug-tool",
     "test": "eslint --fix \"lib/**/*.js\" \"spec/**/*.js\" && apm test"
   },
-  "version": "8.6.1"
+  "version": "8.6.2"
 }
