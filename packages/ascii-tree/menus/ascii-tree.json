@@ -1,0 +1,34 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Generate ASCII Tree",
+        "command": "ascii-tree:generate"
+      },
+      {
+        "label": "Reverse ASCII Tree",
+        "command": "ascii-tree:reverse"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "ASCII Tree",
+          "submenu": [
+            {
+              "label": "Generate",
+              "command": "ascii-tree:generate"
+            },
+            {
+              "label": "Reverse",
+              "command": "ascii-tree:reverse"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

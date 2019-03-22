@@ -1,0 +1,54 @@
+{
+  "_from": "https://www.atom.io/api/packages/ascii-tree/versions/1.1.0/tarball",
+  "_id": "ascii-tree@1.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-laLsdwtzvLhogZNlSeEfxDDZjCp5uTrlnP1ZpCgGvqUOoVIWt1qtp5j6UbYNe+b04RqH4pwDr4nqNKEimX1ETg==",
+  "_location": "/ascii-tree",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/ascii-tree/versions/1.1.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/ascii-tree/versions/1.1.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/ascii-tree/versions/1.1.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/ascii-tree/versions/1.1.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/ascii-tree/versions/1.1.0/tarball",
+  "_shasum": "4df725409b124bce0a66d729574e1c7de9bb7be4",
+  "_spec": "https://www.atom.io/api/packages/ascii-tree/versions/1.1.0/tarball",
+  "_where": "/private/var/folders/kq/0mntlkfs4q53vf5dcns0f5th0000gn/T/apm-install-dir-119221-44995-1azc378.1urf",
+  "activationCommands": {
+    "atom-workspace": "ascii-tree:generate"
+  },
+  "bugs": {
+    "url": "https://github.com/ramtinsoltani/atom-ascii-tree/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Generate ASCII trees with ease!",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/ramtinsoltani/atom-ascii-tree#readme",
+  "keywords": [
+    "ascii",
+    "tree",
+    "folder",
+    "directory",
+    "structure",
+    "ascii-tree",
+    "generate"
+  ],
+  "license": "MIT",
+  "main": "./lib/ascii-tree",
+  "name": "ascii-tree",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramtinsoltani/atom-ascii-tree.git"
+  },
+  "version": "1.1.0"
+}
