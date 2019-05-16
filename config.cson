@@ -1,5 +1,16 @@
 "*":
   "SFTP-deployment": {}
+  "atom-shell-commands":
+    commands: [
+      {
+        name: "Update My Blog"
+        command: "./update-blog.sh"
+        options:
+          cwd: "{ProjectDir}"
+          keymap: 'ctrl-2'
+          save: "True"
+      }
+    ]
   "atom-timestamp":
     numberOfLines: 10
     scopeSelector: "^comment\\b|plain\\.text|text\\.plain\\.null-grammar|source.gfm"

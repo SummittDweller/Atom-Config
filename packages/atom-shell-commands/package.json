@@ -1,0 +1,92 @@
+{
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [
+      {
+        "name": "win-spawn",
+        "version": "2.0.0",
+        "path": "node_modules/win-spawn/index.js"
+      }
+    ],
+    "extensions": {
+      ".js": [
+        "lib/atom-shell-commands.js",
+        "lib/config.js",
+        "node_modules/win-spawn/index.js"
+      ],
+      ".json": [
+        "node_modules/win-spawn/package.json",
+        "package.json"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "lib",
+          "menus",
+          ""
+        ],
+        "dependencies": {
+          "win-spawn": "^2.0.0"
+        }
+      }
+    ]
+  },
+  "_from": "https://www.atom.io/api/packages/atom-shell-commands/versions/1.5.0/tarball",
+  "_id": "atom-shell-commands@1.5.0",
+  "_inBundle": false,
+  "_integrity": "sha512-SYj58fXp0vOHKVst2zOU1TDMI6dLRzh5HYzXCwNTSGi0uTWGT9tyPx0VQU4BO2kQ8YpbwLFsaQcNMHjIcb039Q==",
+  "_location": "/atom-shell-commands",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/atom-shell-commands/versions/1.5.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/atom-shell-commands/versions/1.5.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/atom-shell-commands/versions/1.5.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/atom-shell-commands/versions/1.5.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/atom-shell-commands/versions/1.5.0/tarball",
+  "_shasum": "6030fb97c165e8ea52ee6713a19c482965ff5d44",
+  "_spec": "https://www.atom.io/api/packages/atom-shell-commands/versions/1.5.0/tarball",
+  "_where": "/private/var/folders/l0/b_nd9x1n7y78m029rzml1kxr0000gp/T/apm-install-dir-119416-11574-1wk957o.z63zi",
+  "author": {
+    "name": "skywind3000"
+  },
+  "bugs": {
+    "url": "https://github.com/skywind3000/atom-shell-commands/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "atom-message-panel": "^1.2.4",
+    "space-pen": "^4",
+    "xregexp": "^2.0.0"
+  },
+  "deprecated": false,
+  "description": "Customize shell commands. Similar to 'Run Commands' in NotePad++, 'User Tool' in EditPlus/UltraEdit, 'External Tool' in GEdit and 'Shell Commands' in TextMate.",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/skywind3000/atom-shell-commands",
+  "keywords": [
+    "build",
+    "compile",
+    "make",
+    "user",
+    "tool",
+    "shell",
+    "command",
+    "project"
+  ],
+  "license": "MIT",
+  "main": "./lib/atom-shell-commands",
+  "name": "atom-shell-commands",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skywind3000/atom-shell-commands.git"
+  },
+  "version": "1.5.0"
+}
