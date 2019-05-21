@@ -3,12 +3,12 @@
   "atom-shell-commands":
     commands: [
       {
-        name: "Update My Blog"
-        command: "./update-blog.sh"
+        name: "Push a Static Update"
+        command: "./push-update.sh"
         options:
           cwd: "{ProjectDir}"
-          keymap: 'ctrl-2'
-          save: "True"
+          keymap: "ctrl-2"
+          save: true
       }
     ]
   "atom-timestamp":
