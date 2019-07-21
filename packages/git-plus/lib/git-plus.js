@@ -1,6 +1,5 @@
 import "@babel/polyfill";
 import { CompositeDisposable, Disposable } from "atom";
-import { OutputViewContainer } from "./views/output-view/container";
 import { TreeViewBranchManager } from "./views/tree-view-branches";
 import git from "./git";
 import configurations from "./config";
@@ -148,6 +147,10 @@ module.exports = {
           "git-plus:delete-remote-branch": () => {
             git.getRepo().then(repo => GitDeleteBranch(repo, { remote: true }));
           },
+          "git-plus:delete-branch-local-and-remote": () => {
+            git.getRepo().then(repo => GitDeleteBranch(repo))
+              .then(repo => GitDeleteBranch(repo, { remote: true }));
+          },
           "git-plus:cherry-pick": () => git.getRepo().then(repo => GitCherryPick(repo)),
           "git-plus:diff": () => {
             git.getRepo().then(repo => GitDiff(repo, { file: currentFile(repo) }));
@@ -201,7 +204,7 @@ module.exports = {
       );
       this.subscriptions.add(
         atom.commands.add("atom-workspace", "git-plus:fetch-all", {
-          displayName: "Fetch All (Repos & Remotes)",
+          displayName: "Git-Plus: Fetch All (Repos & Remotes)",
           didDispatch: _event => gitFetchInAllRepos()
         })
       );

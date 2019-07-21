@@ -1,0 +1,48 @@
+{
+  "_from": "https://www.atom.io/api/packages/atom-sass/versions/0.4.0/tarball",
+  "_id": "atom-sass@0.4.0",
+  "_inBundle": false,
+  "_integrity": "sha512-W4KNcuiLaWrPGHIDRVIXpnNtK1idNuYLprK5QQ7HLBnqOqJdr2poikM1U99/LqFhjy31cw6yILFPKAi2C6PjSw==",
+  "_location": "/atom-sass",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/atom-sass/versions/0.4.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/atom-sass/versions/0.4.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/atom-sass/versions/0.4.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/atom-sass/versions/0.4.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/atom-sass/versions/0.4.0/tarball",
+  "_shasum": "d08553a0f1a65a3522a5274b3d471622310d3cb9",
+  "_spec": "https://www.atom.io/api/packages/atom-sass/versions/0.4.0/tarball",
+  "_where": "/private/var/folders/kq/0mntlkfs4q53vf5dcns0f5th0000gn/T/apm-install-dir-119618-35731-2uyr2z.9moar",
+  "bugs": {
+    "url": "https://github.com/rehrumesh/atom-sass/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Sass compiler for atom.",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/rehrumesh/atom-sass#readme",
+  "keywords": [
+    "atom",
+    "sass",
+    "scss",
+    "compile"
+  ],
+  "license": "MIT",
+  "main": "./lib/atom-sass",
+  "name": "atom-sass",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rehrumesh/atom-sass.git"
+  },
+  "version": "0.4.0"
+}

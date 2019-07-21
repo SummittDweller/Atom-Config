@@ -3,8 +3,8 @@
   "atom-shell-commands":
     commands: [
       {
-        name: "Push a Static Update"
         command: "./push-update.sh"
+        name: "Push a Static Update"
         options:
           cwd: "{ProjectDir}"
           keymap: "ctrl-2"
@@ -33,6 +33,9 @@
     tabType: "soft"
   "exception-reporting":
     userId: "9c239e0a-4d8b-8a48-51cd-fdbcf9182b6d"
+  "gist-it":
+    openAfterCreate: true
+    userToken: "e00f0091422a261e387ae20faae5dc6248f4b3c4"
   "git-plus":
     commits:
       verboseCommits: true
